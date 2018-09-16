@@ -8,15 +8,26 @@
 
 ## 简介
 
-特色（推广的一些亮点）
+- 该项目高仿外卖app打造的前端应用，移动端自适应的布局，采用js/css模块化的开发去实现部分主要功能。
+- 该项目是原生webpack构建的vue项目(未使用官方vue-cli），webpack版本3.10.0。
 
 ## 安装下载
 
-- 下载地址 https://github.com/fast-cache/fast-cache/releases
-- `npm i fast-cache-npm`
-- CDN http://unpkg.com/fast-cache-npm/release/bundle.js
+- 快速使用：
+  方法一，手机浏览器访问：`https://zaozao1040.github.io/dist/#/`
+  方法二，微信扫一扫：
+- 安装使用：
+  方法一，研发环境：
+    1.下载代码：`git clone https://github.com/zaozao1040/eleme.git`
+    2.进入根目录安装各依赖：`npm install`
+    3.运行：`npm run start`
+    4.访问地址：`http://localhost:8000/#/`
+  方法二，生产环境：
+    1.下载代码：`git clone https://github.com/zaozao1040/eleme.git`
+    2.把代码解压后根目录下的dist目录和api目录拷贝到本地apache服务器，api文件夹拷贝到apache服务器的根目录
+    3.访问本地apache服务器该项目的dist目录即可
 
-## 快速使用
+## 功能说明
 
 简单接入的文档
 
