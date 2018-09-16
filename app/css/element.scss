@@ -1,0 +1,228 @@
+@import "./layout.scss";
+
+@mixin panel($bgcolor:#fff,$padding:0,$margin:20px 0,$height:140px,$txtPadding:0 20px,$color:#333,$fontsize:30px){
+	background: $bgcolor;
+	padding: $padding;
+	margin: $margin;
+	>h5{
+		height: $height;
+		line-height: $height;
+		padding:$txtPadding;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		text-align: center;
+		color: $color;
+		font-size: $fontsize
+	}
+}
+
+@mixin title($bgcolor:#fff,$padding:0,$margin:20px 0,$height:50px,$txtPadding:0 20px,$color:#333,$fontsize:30px){
+	background: $bgcolor;
+	padding: $padding;
+	margin: $margin;
+	>h5{
+		height: $height;
+		line-height: $height;
+		height: $height;
+		line-height: $height;
+		padding:$txtPadding;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		text-align: center;
+		color: $color;
+		font-size: $fontsize;
+		font-weight: 700;
+    &:before{
+      content: '\e605\00A0\00A0'; //横线图标 \00A0代表一个空格
+    }
+    &:after{
+      content: '\00A0\00A0\e605'; //横线图标
+    }
+  } 
+}
+
+@mixin star($height:50px){
+	width: $height * 5;
+	height: $height;
+	display: inline-block;
+	>div{
+		text-align: center;
+		display: inline-block;
+		width: 20%;
+		>img{
+			width: 100%;	
+		}
+	}	
+}
+
+@mixin iconfont($color:#fff,$fontSize:30px){
+	color: $color;
+	font-size:$fontSize;
+	text-align: center;
+
+}
+
+@mixin list($direction:column){
+	@include flex($direction)
+}
+
+@mixin borderBottom(){
+	border-bottom: #bbb8b8 1px solid;
+}
+
+@mixin btn($height: 30px,$size:14px,$color:#fff,$bgcolor:#F04752,$padding:5px,$radius:5px) {
+  padding: $padding;
+  background-color: $bgcolor;
+  border-radius: $radius;
+  border: 1px solid $bgcolor;
+  font-size: $size;
+  color: $color;
+  text-align: center;
+  display: inline-block;
+  height: $height;
+  line-height: $height;
+}
+
+@mixin ellipsis(){
+	overflow:hidden; 
+	text-overflow:ellipsis;
+ 	white-space:nowrap;
+}
+
+/* @mixin bg-image(url) {
+  background-image: url(url) no-repeat;
+} */
+@mixin supporticon($size:20px,$color:#7d7272){
+	text-indent:$size * 1.25;
+	background-repeat: no-repeat;
+	background-size: $size $size;
+	background-position: left center; 
+	color: $color;
+	font-size: $size;
+	&.decrease{
+		background-image: url('./img/decrease_3@2x.png');
+	}
+ 	&.discount{
+	  background-image: url('./img/discount_3@2x.png');
+	}
+	&.guarantee{
+	  background-image: url('./img/guarantee_3@2x.png');
+	}
+	&.invoice{
+	  background-image: url('./img/invoice_3@2x.png');
+	}
+	&.special{
+	  background-image: url('./img/special_3@2x.png');
+	} 
+}
+
+
+@mixin envelope($width: 130px){
+	margin: 0 auto;
+	width: $width;
+	height: $width*1.2;
+	background: url(//fuss10.elemecdn.com/4/7f/bf89a63c7ed2942b4fcff183462e3png.png) no-repeat;
+	background-size: 100% auto;
+	>div:nth-child(1){
+		height: $width*0.8;
+		text-align: center;
+		color:#7d490f;
+		line-height: $width*0.8;
+		span:nth-child(1){
+			font-size: 25px;
+		}
+		span:nth-child(2){
+			font-size: 40px;
+		}
+	}
+	>div:nth-child(2){
+		padding: 5px 10px 0 10px;
+		>div{
+			width: 100%;
+			height: 35px;
+			line-height: 35px;
+			background: #ffe473;
+			border-radius:5px;
+			color:#c27300;
+			font-size: 20px;
+			text-align: center;
+		}
+
+/* 		box-sizing: border-box;
+		height: $width*0.4;
+		line-height: $width*0.4;
+		text-align: center;
+		border: 1px black solid;
+		margin: 5px 35px;
+		font-size: 15px; */
+
+	}
+}
+
+
+
+@mixin sliderImg($color:black,$fontSize:20px){
+	@include list($direction:row);
+	>div{
+		width: 100%;
+	 	img{
+			  width:100%;
+		} 
+	}
+
+}
+@mixin sliderMenu($color:black,$fontSize:20px){
+	@include list($direction:row);
+	>div{
+		width: 20%;
+		height: 0;
+		padding-bottom: 20%;
+		text-align: center;
+		>img{
+		  width:60%;
+		}
+		>p{
+	    color: $color;
+	    text-align: center;
+	    font-size: $fontSize
+		}
+	}
+
+}
+@mixin sliderText($color:#fff,$fontSize:30px,$height:60px,$margin:0 15px){
+	@include list($direction:row);
+  width: auto !important;
+  margin: $margin;
+	>p{
+    box-sizing: border-box;
+    width: auto;
+    height: $height;
+    font-size: $fontSize;
+    font-weight: bold;
+    line-height: $height;
+    color:$color;
+/*     &.active{
+    	border-bottom: 3px solid #fff;
+    } */
+	}
+
+}
+
+@mixin scroll(){
+  overflow: hidden;
+  position: absolute;
+  background: #f3f5f7;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+@mixin interval($height:35px){
+	width: 100%;
+	height: $height;
+	background: #d9e7f5;
+	border-top: 1px solid rgba(7,17,27,0.1);
+	border-bottom: 1px solid rgba(7,17,27,0.1);
+}
