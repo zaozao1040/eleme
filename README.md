@@ -9,8 +9,9 @@
 ## 安装下载
 
 - 快速使用：<br />
-  方法一，手机浏览器访问：https://zaozao1040.github.io/dist/#/  <br />
+  方法一，手机浏览器访问：https://zaozao1040.github.io/eleme/dist/#/<br />
   方法二，微信扫一扫：<br />
+  ![Alt text](https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/erweima.png)
 - 安装使用：<br />
   方法一，研发环境：<br />
     1.下载代码：`git clone https://github.com/zaozao1040/eleme.git`<br />
