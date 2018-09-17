@@ -23,7 +23,8 @@
     3.访问本地apache服务器该项目的dist目录即可<br />
 
 ## 功能说明
-<img src="https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG119.png" width="300px" /> 
+- 使用axios后台数据/btscroll/swipper等插件的效果图：<br />
+<img src="https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG119.png" width="300px" style="display:inline"/> 
 <img src="https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG120.png" width="300px" /> 
 <img src="https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG121.png" width="300px" /> 
 ![Alt text](https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG119.png)
