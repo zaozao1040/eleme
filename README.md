@@ -8,10 +8,10 @@
 
 ## 安装下载
 
-- 快速使用：
+- 快速使用：<br />
   方法一，手机浏览器访问：`https://zaozao1040.github.io/dist/#/` <br />
   方法二，微信扫一扫：<br />
-- 安装使用：
+- 安装使用：<br />
   方法一，研发环境：<br />
     1.下载代码：`git clone https://github.com/zaozao1040/eleme.git`<br />
     2.进入根目录安装各依赖：`npm install`<br />
