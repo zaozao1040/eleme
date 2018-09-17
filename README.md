@@ -9,7 +9,7 @@
 ## 安装下载
 
 - 快速使用：<br />
-  方法一，手机浏览器访问：`https://zaozao1040.github.io/dist/#/` <br />
+  方法一，手机浏览器访问：https://zaozao1040.github.io/dist/#/  <br />
   方法二，微信扫一扫：<br />
 - 安装使用：<br />
   方法一，研发环境：<br />
@@ -27,14 +27,12 @@
 <img src="https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG119.png" width="300px" /> 
 <img src="https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG120.png" width="300px" /> 
 <img src="https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG121.png" width="300px" /> 
-![Alt text](https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG119.png)
-![Alt text](https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG120.png)
-![Alt text](https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG121.png)
-![Alt text](https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG122.png)
-![Alt text](https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG123.png)
-![Alt text](https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG124.png)
-![Alt text](https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG125.png)
-![Alt text](https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG126.png)
+<img src="https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG122.png" width="300px" /> 
+<img src="https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG123.png" width="300px" /> 
+<img src="https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG124.png" width="300px" /> 
+<img src="https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG125.png" width="300px" /> 
+<img src="https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG126.png" width="300px" /> 
+
 
 
 
