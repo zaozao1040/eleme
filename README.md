@@ -23,7 +23,7 @@
     3.访问本地apache服务器该项目的dist目录即可<br />
 
 ## 功能说明
-<img src="https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG119.png" width="400" />
+<img src="https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG119.png" width="400px" /> <br />
 ![Alt text](https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG119.png)
 ![Alt text](https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG120.png)
 ![Alt text](https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG121.png)
