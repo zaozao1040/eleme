@@ -23,6 +23,13 @@
     2.把代码解压后根目录下的dist目录和api目录拷贝到本地apache服务器，api文件夹拷贝到apache服务器的根目录<br />
     3.访问本地apache服务器该项目的dist目录即可<br />
 
+## 技术栈列表
+
+原生webpack构建，自适应hotcss布局，使用css module，使用vue前端框架结合px2rem-loader/betterscroll/axios/awesomeSwiper等一系列生态插件 <br />
+- webpack 3.10.0
+- vue 2.5
+
+
 ## 功能说明
 - 使用axios后台数据/btscroll/swipper等插件的效果图：<br />
 <img src="https://github.com/zaozao1040/zaozao1040.github.io/raw/master/img/eleme/WechatIMG119.png" width="300px" /> 
