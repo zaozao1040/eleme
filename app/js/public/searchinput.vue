@@ -1,6 +1,6 @@
 <template>
 	<section :class="$style.content">
-		<input v-model="keyword" :class="[$style.search,'iconfont']" type="text" :placeholder="iconP">
+		<input v-model="keyword" :class="[$style.search,'iconfont']" type="text" :placeholder="iconP" @keyup="handleReturnKeyword">
 		<slot></slot>
 	</section>
 </template>
@@ -20,6 +20,11 @@ export default {
     	keyword: '',
     	iconP: '\ue86f' + ' ' + this.placeholderText,
     }
+  },
+  methods: {
+  	handleReturnKeyword: function(){
+  		this.$emit('handleGetKeyword',this.keyword)
+  	}
   }
 }
 </script>

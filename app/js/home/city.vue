@@ -2,10 +2,26 @@
 	<section :class="$style.wrapper">
 		<v-panel title="城市选择" :class="$style.pannel" cname="iconfont"></v-panel>
 		<v-iconfont :class="$style.iconfont" url='backFlag'></v-iconfont>
-		<v-searchinput placeholderText="输入城市名称或者拼音"></v-searchinput>
+		<v-searchinput placeholderText="输入城市名称或者拼音" @handleGetKeyword="handleShowCitylist"></v-searchinput>
+		
 
-		<v-scroll :class="$style.citiesScroll" ref="cScroll" refScrollWrapper='citiesScroll'>
 
+    <div :class="$style.citiesSearchResult" ref="search" v-if="keyword">
+      <ul>
+        <li 
+          v-for="item of list"
+          :key="item.id"
+          @click="handleCityClick(item.name)"
+        >
+          {{item.name}}
+        </li>
+        <li v-show="hasNoData">没有找到匹配数据。。</li>
+      </ul>
+    </div>
+
+
+
+		<v-scroll :class="$style.citiesScroll" ref="cScroll" refScrollWrapper='citiesScroll' v-if="!keyword">
 			<v-interval :class="$style.interval">
 				<h5>当前城市</h5>
 			</v-interval>
@@ -66,7 +82,10 @@ export default {
     return {
     	hotCities: [],
     	cities: {},
-      letter: ''
+      letter: '',
+      keyword: '',
+      list: [],
+      timer: null
     }
   },
   methods: {
@@ -89,10 +108,18 @@ export default {
     handleLetterChange: function (letter) {
       //console.log(letter)
       this.letter = letter
-    }
+    },
+  	handleShowCitylist: function(keyword){
+  		this.keyword = keyword
+  	}
   },
   created: function () {
     this.getDetailInfo()
+  },
+  computed: {
+    hasNoData: function () {
+      return !this.list.length
+    }
   },
   watch: {
     letter: function () {
@@ -101,6 +128,28 @@ export default {
         this.$refs.cScroll.getScrollEl().scrollToElement(element)
       }
       //console.log(this.letter)
+    },
+    keyword: function () {
+      if (this.timer) {
+        clearTimeout(this.timer)
+      }
+      if (!this.keyword) {
+        this.list = []
+        return
+      }
+      this.timer = setTimeout(() => {
+        const result = []
+        for (let i in this.cities) {
+          this.cities[i].forEach((value) => {
+            if (value.spell.indexOf(this.keyword) > -1 ||
+              value.name.indexOf(this.keyword) > -1) {
+              result.push(value)
+            }
+          })
+        }
+        this.list = result
+        console.log(this.list)
+      }, 100)
     }
   }
 }
@@ -122,6 +171,18 @@ export default {
 		position: fixed;
 		top:20px;
 		left: 20px;
+	}
+	.citiesSearchResult{
+		margin: 10px;
+		padding: 5px;
+		font-size: 25px;
+		margin:10px 20px 0 20px;
+		li{
+			padding: 10px 0 10px 0;
+			font-size: 25px;
+			border-bottom: 1px #90878745 solid;
+		}
+		
 	}
 	.citiesScroll{
 		@include scroll;
