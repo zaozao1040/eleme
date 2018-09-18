@@ -60,7 +60,7 @@ export default {
 <style lang="scss" module>
 	@import "~@/css/element.scss"; 
 	.hock{
-		height: 170px;
+		height: 200px;
 	}
 	.footer{
 		@include list(row)

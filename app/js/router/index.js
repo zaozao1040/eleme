@@ -9,6 +9,7 @@ import mine from '../mine/mine.vue'
 import newthing from '../newthing/newthing.vue'
 import shoppingcart from '../home/shoppingcart.vue'
 import hongbao from '../mine/hongbao.vue'
+import reward from '../mine/reward.vue'
 import vip from '../mine/vip.vue'
 /*import personal from '../personal/personal.vue'*/
 Vue.use(Router)
@@ -59,6 +60,11 @@ export default new Router({
             path: "/hongbao",
             name: "hongbao",
             component: hongbao,
+        },
+        {
+            path: "/reward",
+            name: "reward",
+            component: reward,
         },
         {
             path: "/vip",

@@ -25,10 +25,10 @@
 				<h4 v-if="mine.hongbao">{{mine.hongbao.length}}<span>个</span></h4>
 				<h5>红包 ></h5>
 			</router-link>
-			<div>
+			<router-link :to="{name:'reward'}" tag="div">
 				<h4 v-if="mine.reward">{{mine.reward.num}}<span>个</span></h4>
 				<h5>金币 ></h5>
-			</div>
+			</router-link>
 		</div>
 		<v-interval :class="$style.interval"></v-interval>
 		<div :class="$style.rowWrapper">
