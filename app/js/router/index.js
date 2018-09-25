@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import datashow from '../home/datashow.vue'
 import Home from '../home/index.vue'
 import Sellers from '../sellers/sellers.vue'
 import Seller from '../seller/seller.vue'
@@ -18,6 +19,11 @@ export default new Router({
     routes: [
         {
             path: "/",
+            name: "datashow",
+            component: datashow,
+        },
+        {
+            path: "/home",
             name: "home",
             component: Home,
         },
