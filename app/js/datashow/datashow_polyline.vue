@@ -1,11 +1,15 @@
 <template>
 	<section>
-		<canvas id="canvas" :class="$style.canvas">
-			你的浏览器不支持，请使用chrome
-		</canvas>
-		<canvas id="canvas_dynamic" :class="$style.canvas">
-			你的浏览器不支持，请使用chrome
-		</canvas>
+    <transition enter-active-class="animated lightSpeedIn"  >
+      <div v-show="showFlag" :class="$style.canvas_polyline_warpper">
+        <canvas id="canvas_polyline" :class="$style.canvas_polyline">
+          你的浏览器不支持，请使用chrome
+        </canvas>
+        <canvas id="canvas_polyline_dynamic" :class="$style.canvas_polyline">
+          你的浏览器不支持，请使用chrome
+        </canvas>   
+      </div>
+    </transition>
 	</section>
 </template>
 
@@ -13,43 +17,54 @@
 export default {
 
   name: 'datashow_polyline',
-
   data () {
     return {
+      showFlag:false,
     	items: [
     		{
-    			year: '2012',
-    			rate: 0.27,
+    			name: '2012',
+    			data: 0.27,
     			color: false
     		},{
-    			year: '2013',
-    			rate: 0.336,
+    			name: '2013',
+    			data: 0.336,
     			color: false
     		},{
-    			year: '2014',
-    			rate: 0.514,
+    			name: '2014',
+    			data: 0.514,
     			color: true
     		},{
-    			year: '2015',
-    			rate: 0.290,
+    			name: '2015',
+    			data: 0.290,
     			color: false
     		},{
-    			year: '2016',
-    			rate: 0.225,
+    			name: '2016',
+    			data: 0.225,
     			color: false
     		},{
-    			year: '2017',
-    			rate: 0.176,
+    			name: '2017',
+    			data: 0.176,
     			color: false
     		},{
-    			year: '2018',
-    			rate: 0.115,
+    			name: '2018',
+    			data: 0.115,
     			color: false
     		}
     	],
     	canvas_h: 500,
     	canvas_w: document.body.offsetWidth-50,
     	canvas_grid_h: 470
+    }
+  },
+  computed :{
+    maxData: function(){
+      var tmp = 0
+      for(var i=0;i<this.items.length;i++){
+        if(this.items[i].data>=tmp){
+          tmp = this.items[i].data
+        }
+      }
+      return tmp
     }
   },
   methods: {
@@ -92,26 +107,26 @@ export default {
   		var x =0
   		var y =0
   		var column_w = ( this.canvas_w / (this.items.length + 1))
-  		//画点 + 文字
+  		//画点
   		for( var i in this.items){
   			x = column_w * i + column_w
-  			y = this.canvas_grid_h - this.canvas_grid_h*this.items[i].rate * per
+  			y = this.canvas_grid_h - this.canvas_grid_h*this.items[i].data/this.maxData *0.8* per 
   			cxt.moveTo(x,y)
   			cxt.arc(x,y,3,0,Math.PI*2,true)
   			cxt.font = "20px Arial"
   			
   		}
   		//画线
-  		cxt.moveTo(column_w,this.canvas_grid_h - this.canvas_grid_h*this.items[0].rate * per)
+  		cxt.moveTo(column_w,this.canvas_grid_h - this.canvas_grid_h*this.items[0].data/this.maxData *0.8* per)
   		for( var i in this.items){
   			x = column_w * i + column_w
-  			y = this.canvas_grid_h - this.canvas_grid_h*this.items[i].rate * per
+  			y = this.canvas_grid_h - this.canvas_grid_h*this.items[i].data/this.maxData *0.8* per
   			cxt.lineTo(x,y)
   			cxt.fillStyle="Purple"
   			if(this.items[i].color){
   				cxt.fillStyle="red"
   			}
-  			cxt.fillText((this.items[i].rate*100>>0 )+'%' ,x-10,y-10)
+  			cxt.fillText((this.items[i].data*100>>0 )+'%' ,x-10,y-10)
   		}
   		cxt.stroke()
 
@@ -125,25 +140,30 @@ export default {
   		for( var i in this.items){
   			x = column_w * i + column_w
   			y = this.canvas_h 
-  			cxt.fillStyle="blue"
+  			cxt.fillStyle="green"
   			cxt.font = "25px Arial"
   			cxt.textAlign="center"
-  			cxt.fillText(this.items[i].year ,x,y-5)
+  			cxt.fillText(this.items[i].name ,x,y-5)
   		}
   		cxt.closePath()
   	}
   },
   mounted: function(){
-  	var that = this
-  	var context = this.initCanvas('canvas')
+    var that = this
+    var context = this.initCanvas('canvas_polyline')
     this.darwGrid(context)
-    var context_dynamic = this.initCanvas('canvas_dynamic')
+    var context_dynamic = this.initCanvas('canvas_polyline_dynamic')
     var per =0
+
+    setTimeout(function(){
+      that.showFlag=!that.showFlag
+    },10)
+
     for(var i=0;i<100;i++){
-    	setTimeout(function(){
-    		per += 0.01
-    		that.darwDynamic(context_dynamic,per)
-    	},i*10)
+      setTimeout(function(){
+        per += 0.01
+        that.darwDynamic(context_dynamic,per)
+      },1000+i*10)
     }
 
   }
@@ -151,13 +171,26 @@ export default {
 </script>
 
 <style lang="scss" module>
-.canvas{
-	display: block;
-	margin: auto;
+.canvas_polyline_warpper{
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  display: block;
+  margin: auto;
   position: absolute;
-	left: 0; 
-	top:0;
-	right: 0;
-	bottom: 0;
+  left: 0; 
+  top:0;
+  right: 0;
+  bottom: 0;
+  //background: #f3f5f7;
+  .canvas_polyline{
+    margin: auto;
+    position: absolute;
+    left: 0; 
+    top:0;
+    right: 0;
+    bottom: 0;
+  }
 }
+
 </style>
