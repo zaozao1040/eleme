@@ -35,7 +35,7 @@ export default {
   data () {
     return {
       componentFlag: ['v-datashow_home','v-datashow_bar','v-datashow_pie','v-datashow_polyline','v-datashow_rada'],
-      titleArr: ['','送餐之外有万物 医药订单增长一倍','炸鸡哪家强？国产更加香','吃相大数据 订单逐年增长','你尽管饿 整个城市都是你24小时的食堂'],
+      titleArr: ['','送餐之外有万物 医药订单涨一倍','炸鸡哪家强？国产更加香','吃相大数据 订单逐年增','你尽管饿 整个城市就是24小时食堂'],
       i: 0
     }
   },
@@ -72,7 +72,7 @@ export default {
       margin-top: 0;
       text-align: center;
       height: 600px;
-      line-height: 400px;
+      line-height: 560px;
       color: #7520da;
       //background: green;
        background: linear-gradient(#3496c7 , white 100%) 
@@ -92,15 +92,15 @@ export default {
       text-align: center;
     }
     .icon1{
-      font-size: 50px;
+      font-size: 80px;
       color: #fff;
     }
     .icon2{
-      font-size: 50px;
+      font-size: 80px;
       color: #76b8ec;
     }
     .icon3{
-      font-size: 70px;
+      font-size: 100px;
       color: #76b8ec;
       position: fixed;
       bottom: 40px;
