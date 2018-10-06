@@ -72,7 +72,7 @@ export default {
       margin-top: 0;
       text-align: center;
       height: 600px;
-      line-height: 560px;
+      line-height: 500px;
       color: #7520da;
       //background: green;
        background: linear-gradient(#3496c7 , white 100%) 
