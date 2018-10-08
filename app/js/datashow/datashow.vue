@@ -75,7 +75,7 @@ export default {
       line-height: 500px;
       color: #7520da;
       //background: green;
-       background: linear-gradient(#3496c7 , white 100%) 
+      background: linear-gradient(#3496c7 , white 100%) 
     }
     .icon1wrapper{
       position: fixed;
